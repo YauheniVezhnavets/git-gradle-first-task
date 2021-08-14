@@ -32,7 +32,7 @@ test {
     useJUnitPlatform()
 }
 
-// Deprecated Gradle features were used in this build, making it incompatible with Gradle  5.0.
+// Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
 jar {
     manifest {
         attributes 'Implementation-Title': project.name,
