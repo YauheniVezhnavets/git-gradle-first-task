@@ -3,8 +3,8 @@ plugins {
     id 'maven-publish'
 }
 
+group = 'com.epam.task'
 version = '1.3.5'
-
 
 repositories {
     mavenCentral()
@@ -17,12 +17,22 @@ dependencies {
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = 'utils'
+            version = version
+            from components.java
+        }
+    }
+}
+
 test {
     useJUnitPlatform()
 }
 
-
-// Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+// Deprecated Gradle features were used in this build, making it incompatible with Gradle  5.0.
 jar {
     manifest {
         attributes 'Implementation-Title': project.name,
